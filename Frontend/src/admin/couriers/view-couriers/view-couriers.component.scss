@@ -1,0 +1,21 @@
+.division-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between divisions */
+    padding: 5px; /* Add padding inside the container */
+    border: 2px solid black ;
+    border-radius: 20px; /* Add a border around the container */
+    margin: auto; 
+    //background-color: rgb(236, 189, 236);
+    margin-bottom: 20px;/* Center the container horizontally */
+    max-width: 80%; /* Optional: Limit the width of the container */
+}
+
+
+.division p {
+    margin: 0 0 10px 0; 
+   
+    /* Add margin to paragraphs for better readability */
+}

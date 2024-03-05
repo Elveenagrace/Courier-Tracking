@@ -1,0 +1,66 @@
+
+<form [formGroup]="CourierForm" class="container mb-3 gap-2 br-30 p-4">
+    
+    <div class="form-group mb-3 br-30 ">
+      <label for="field1">pickup Address: </label>
+      <input type="text"  class="Form-control" formControlName="pickupAddress">
+      <!-- <p  class="error" *ngIf="DialogueForm.get('songName')?.['errors']?.['required']">*Required</p> -->
+   
+    </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field1">delivery Address: </label>
+        <input type="text"  class="Form-control" formControlName="deliveryAddress">
+        <!-- <p  class="error" *ngIf="DialogueForm.get('songName')?.['errors']?.['required']">*Required</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field2">pickup Pincode: </label>
+        <input type="text"  formControlName="pickupPincode">
+        <!-- <p  class="error" *ngIf="DialogueForm.get('artistName')?.['errors']?.['required']">*Required</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field3">delivery Pincode: </label>
+        <input type="text" formControlName="deliveryPincode">
+        <!-- <p class="error" *ngIf="DialogueForm.get('releaseYear')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('releaseYear')?.['errors']?.['pattern']">*digits only</p> -->
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field4">Weight: </label>
+        <input type="text"  formControlName="weight">
+        <!-- <p class="error" *ngIf="DialogueForm.get('durationInSeconds')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('durationInSeconds')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field5">height: </label>
+        <input type="text"  formControlName="height">
+        <!-- <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field5">length: </label>
+        <input type="text"  formControlName="length">
+        <!-- <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field5">width: </label>
+        <input type="text"  formControlName="width">
+        <!-- <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field5">item Name: </label>
+        <input type="text"  formControlName="itemName">
+        <!-- <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('numberOfStreams')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      <button class=" button-56" role="button"  (click)="onSubmit()" >Submit</button>
+      <br>
+      <button class=" button-56" role="button"  (click)="onCancel()" >Cancel</button>
+    </form>

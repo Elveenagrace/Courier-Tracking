@@ -1,0 +1,39 @@
+
+<form [formGroup]="UserForm" class="container mb-3 gap-2 br-30 p-4">
+    
+    <div class="form-group mb-3 br-30 ">
+      <label for="field1">USER ID: </label>
+      <input type="text"  class="Form-control" formControlName="userId">
+      <!-- <p  class="error" *ngIf="DialogueForm.get('songName')?.['errors']?.['required']">*Required</p> -->
+   
+    </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field1">USERNAME: </label>
+        <input type="text"  class="Form-control" formControlName="username">
+        <!-- <p  class="error" *ngIf="DialogueForm.get('songName')?.['errors']?.['required']">*Required</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field2">PASSWORD: </label>
+        <input type="text"  formControlName="password">
+        <!-- <p  class="error" *ngIf="DialogueForm.get('artistName')?.['errors']?.['required']">*Required</p> -->
+     
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field3">EMAIL: </label>
+        <input type="text" formControlName="email">
+        <!-- <p class="error" *ngIf="DialogueForm.get('releaseYear')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('releaseYear')?.['errors']?.['pattern']">*digits only</p> -->
+      </div>
+      <div class="form-group mb-3 br-30 ">
+        <label for="field4">PHONE: </label>
+        <input type="text"  formControlName="phone">
+        <!-- <p class="error" *ngIf="DialogueForm.get('durationInSeconds')?.['errors']?.['required']">*Required</p>
+        <p class="error" *ngIf="DialogueForm.get('durationInSeconds')?.['errors']?.['pattern']">*digits only</p> -->
+     
+      </div>
+      
+      <button class=" button-56" role="button"  (click)="onUpdate()" >UPDATE</button>
+      <br>
+      <button class=" button-56" role="button"  (click)="onCancel()" >CANCEL</button>
+    </form>

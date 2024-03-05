@@ -1,0 +1,68 @@
+
+<form [formGroup]="detailsForms" class="detailsForms mb-3 gap-2 br-30 p-4" (ngSubmit)="onSubmit(detailsForms.value)">
+    <div class="form-group mb-3 br-30 " >
+      
+      <input type="text"  class="Form-control" placeholder="Enter Courier ID" formControlName="id">
+      <br>
+      <br>
+      <button class="button-56"  >Submit</button>
+      <br>
+      <button class=" button-56" (click)="onCancel()" >Cancel</button>
+      
+
+     
+   
+    </div>
+</form>
+<br>
+
+<div >
+    <table class="table">
+       <thead>
+         <tr>
+           <th>Courier ID</th>
+           <th>User ID</th>
+           <th>Pickup Address</th>
+           <th>Delivery Address</th>
+           <th>Pickup Pincode</th>
+           <th>Delivery Pincode</th>
+           <th>Weight</th>
+           <th>Height</th>
+           <th>Length</th>
+           <th>Width</th>
+           <th>Price</th>
+           <th>Item Name</th>
+           <th>Delivery Date</th>
+           <th>Pickup Date</th>
+           <th>Estimated Delivery Date</th>
+           
+           <th>Delivery Status</th>
+          
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let courier of myCouriers">
+           <td>{{ courier.courierId }}</td>
+           <td>{{ courier.userId }}</td>
+           <td>{{ courier.pickupAddress }}</td>
+           <td>{{ courier.deliveryAddress }}</td>
+           <td>{{ courier.pickupPincode }}</td>
+           <td>{{ courier.deliveryPincode }}</td>
+           <td>{{ courier.weight }}</td>
+           <td>{{ courier.height }}</td>
+           <td>{{ courier.length }}</td>
+           <td>{{ courier.width }}</td>
+           <td>{{ courier.price }}</td>
+           <td>{{ courier.itemName }}</td>
+           <td>{{ courier.deliveryDate }}</td>
+           <td>{{ courier.pickupDate }}</td>
+           <td>{{ courier.estimatedDeliveryDate }}</td>
+           
+           <td>{{ courier.deliveryStatus }}</td>
+           
+         </tr>
+       </tbody>
+    </table>
+   </div>
+   
+

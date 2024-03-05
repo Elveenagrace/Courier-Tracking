@@ -1,0 +1,18 @@
+<div class="checkout-container">
+    <h2>Enter Courier ID</h2>
+    <input type="number" #courierIDInput placeholder="courierId">
+    <br>
+    <button class="button-56" (click)="fetchCourierPrice(+courierIDInput.value)">Fetch Courier Price</button>
+   <br>
+    <div *ngIf="currentPrice !== null" class="current-price-container">
+       <h3>Price: {{ currentPrice }}</h3>
+    </div>
+    <br>
+   
+    <div class="buttons-container">
+       <button class="button-56"(click)="onPay()">Pay</button>
+      <br>
+       <button class="button-56" (click)="onCancel()" >Cancel</button>
+    </div>
+</div>
+

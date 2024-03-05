@@ -1,0 +1,31 @@
+<nav class="navbar" >
+    <div class="dropdown">
+      <div class="">
+        <span class="material-symbols-outlined">
+          person
+          </span>
+      </div>
+      <div class="dropdown-content">
+        <button  type = "button" routerLink="/user/userInfo">My Info</button>
+      
+      <button  type = "button" routerLink="/login">Logout</button>
+      
+      </div>
+    </div>
+  </nav>
+  <br>
+ 
+ 
+  <div class="division-container">
+
+  <div class="division">
+    <h2 class="division-heading">Book Your Shipment</h2>
+    <button class="button-56" routerLink="CourierBooking" (click)="bookCourier()">SHIP A COURIER</button>
+  </div>
+  
+  <div class="division">
+    <h2 class="division-heading">Track Your Shipment</h2>
+    <button class="button-56" routerLink="CourierDetails" (click)="trackCourier()">TRACK A COURIER</button>
+  </div>
+
+  </div>

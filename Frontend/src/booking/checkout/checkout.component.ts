@@ -18,14 +18,13 @@ constructor(private courierService : CourierServicesService,private router: Rout
   fetchCourierPrice(courierId: number): void {
     this.courierService.getPrice(courierId).subscribe(response => {
       if (response.message) {
-        // Handle the message returned by the backend
         console.log(response.message ,"asda");
         this.currentPrice = response.message;
-        // Optionally, set a component property to display the message in the UI
+       
      
     } 
 }, error => {
-    // Handle errors here
+   
     console.error('An error occurred:', error);
     });
   }

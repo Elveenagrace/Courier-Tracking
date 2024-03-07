@@ -43,11 +43,14 @@ export class CourierBookingComponent implements OnInit {
       this.courierService.Addcourier(formData).subscribe({
         next: (response) => {
           console.log('Form data sent successfully', response);
+           
         },
         error: (error) => {
           console.error('Error occurred while sending form data', error);
         }
       });
+     
+
       this.router.navigate(['/Booking/checkout']);
     }
   }

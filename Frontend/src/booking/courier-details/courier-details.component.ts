@@ -27,10 +27,8 @@ export class CourierDetailsComponent implements OnInit {
 
   onSubmit(detailsForms: { id: string }) {
     // debugger;
-    console.log(detailsForms);
 
     this.cs .getCourier(this.detailsForms).subscribe((data) => {
-       console.log(data);  
       const courierData = [{
         courierId: data.courierId,
         userId: data.userId,

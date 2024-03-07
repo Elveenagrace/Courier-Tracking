@@ -1,22 +1,52 @@
-<div class="division-container"*ngFor="let courier of courierList">
-    <p>courierId: {{courier.courierId}}</p>
-    <p>userId: {{courier.userId}}</p>
-    <p>pickupAddress: {{courier.pickupAddress}}</p>
-    <p>deliveryAddress: {{courier.deliveryAddress}}</p>
-    <p>pickupPincode: {{courier.pickupPincode}}</p>
-    <p>deliveryAddress: {{courier.deliveryPincode}}</p>
-    <p>weight: {{courier.weight}}</p>
-    <p>height: {{courier.height}}</p>
-    <p>length: {{courier.length}}</p>
-    <p>width: {{courier.width}}</p>
-    <p>price: {{courier.price}}</p>
-    <p>itemName: {{courier.itemName}}</p>
-    <p>deliveryDate: {{courier.deliveryDate}}</p>
-    <p>pickupDate: {{courier.pickupDate}}</p>
-    <p>estimatedDeliveryDate: {{courier.estimatedDeliveryDate}}</p>
-    <p>deliveryStatus: {{courier.deliveryStatus}}</p>
-    
-   
-    
+<div class="table-container">
+    <table class="courier-table">
+       <thead>
+         <tr>
+           <th>Courier ID</th>
+           <th>User ID</th>
+           <th>Pickup Address</th>
+           <th>Delivery Address</th>
+           <th>Pickup Pincode</th>
+           <th>Delivery Pincode</th>
+           <th>Weight</th>
+           <th>Height</th>
+           <th>Length</th>
+           <th>Width</th>
+           <th>Price</th>
+           <th>Item Name</th>
+           <th>Delivery Date</th>
+           <th>Pickup Date</th>
+           <th>Estimated Delivery Date</th>
+           <th>Delivery Status</th>
+           <th>Operations</th>
+         </tr>
+       </thead>
+       <tbody>
+         <ng-container *ngFor="let courier of courierList">
+           <tr>
+             <td>{{courier.courierId}}</td>
+             <td>{{courier.userId}}</td>
+             <td>{{courier.pickupAddress}}</td>
+             <td>{{courier.deliveryAddress}}</td>
+             <td>{{courier.pickupPincode}}</td>
+             <td>{{courier.deliveryPincode}}</td>
+             <td>{{courier.weight}}</td>
+             <td>{{courier.height}}</td>
+             <td>{{courier.length}}</td>
+             <td>{{courier.width}}</td>
+             <td>{{courier.price}}</td>
+             <td>{{courier.itemName}}</td>
+             <td>{{courier.deliveryDate}}</td>
+             <td>{{courier.pickupDate}}</td>
+             <td>{{courier.estimatedDeliveryDate}}</td>
+             <td>{{courier.deliveryStatus}}</td>
+             <td><span class="material-symbols-outlined" (click)="deleteCourier(courier.courierId)">
+                delete
+                </span></td>
+           </tr>
+         </ng-container>
+       </tbody>
+    </table>
+    <button class="button-56" (click)="goBack()">back</button>
    </div>
    

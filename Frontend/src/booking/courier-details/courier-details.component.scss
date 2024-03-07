@@ -55,3 +55,26 @@
       padding: 0 40px;
     }
   }
+  .table-container {
+    width: 100%;
+    max-width: 100%; 
+    margin: auto;
+    overflow-x: auto; 
+   }
+   
+   .courier-table {
+    width: 100%;
+    border-collapse: collapse;
+   }
+   
+   .courier-table th,
+   .courier-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+   }
+   
+   .courier-table th {
+    background-color: #f2f2f2;
+    color: black;
+   }

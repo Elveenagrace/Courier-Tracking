@@ -10,7 +10,6 @@ export class ConfirmationPageComponent implements OnInit{
   transactionId="";
   constructor(private cs: CourierServicesService){}
   ngOnInit(): void {
-   //this.transactionId=this.cs.PaymentId;
   }
 
 }

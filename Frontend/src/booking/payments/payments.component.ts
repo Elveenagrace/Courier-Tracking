@@ -22,7 +22,6 @@ export class PaymentsComponent implements OnInit{
       if (params['amount']) {
         let amountNumber = parseInt(params['amount']);
         this.fakeamount = amountNumber;
-     //   amountNumber = this.fakeamount;
         if (this.fakeamount) {
           console.log(this.fakeamount);
           this.initializePayPalButton();
@@ -91,55 +90,5 @@ export class PaymentsComponent implements OnInit{
 
 
 
-
-
-
-
-
-
-
-  //    window.paypal.Buttons({
-  //     style: {
-  //       layout: 'horizontal',
-  //       color: 'blue',
-  //       shape: 'rect',
-  //       label: 'paypal',
-  //     },
-  //     createOrder: (data: any, actions: any) => {
-  //       return actions.order.create({
-  //         purchase_units: [
-  //           {
-  //             amount: {
-  //              value: this.price.toString(),
-  //              currency_code: 'USD'
-  //             }
-  //           }
-  //         ]
-  //       });
-  //     },
-  //     onApprove: (data: any, actions: any) => {
-  //       return actions.order.capture().then((details: any) => {
-  //         console.log(details);
-  //         if(details.status==="COMPLETED"){
-  //           //this.paymnent.transactionID=details.id;
-  //           this.router.navigate(['buyer/cofirm']);
-  //         }
-         
-  //         // Assuming you have a service method to update the payment transaction ID
-  //         // this.manage.updatePaymentTransactionID(details.id);
-  //         // Navigate to the confirmation page
-       
-  //       });
-  //     },
-  //     onError: (error: any) => {
-  //       console.log(error);
-  //     }
-  //   }).render(this.paymentRef.nativeElement);
- 
-  // }
-  
-  // cancel(){
-  //   this.router.navigate(['Booking']);
-  // }
   
 

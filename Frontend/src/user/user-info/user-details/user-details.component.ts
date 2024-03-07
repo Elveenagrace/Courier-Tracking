@@ -63,6 +63,7 @@ export class UserDetailsComponent implements OnInit {
         console.error('Error updating user', error);
       }
     );
+    
  }
 
 onCancel(): void {

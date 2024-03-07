@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 
 
@@ -10,7 +11,7 @@ import { CourierServicesService } from 'src/shared/services/courierServices/cour
 export class ViewCouriersComponent implements OnInit {
   courierList: any[] = [];
  
-  constructor(private courierService: CourierServicesService) { }
+  constructor(private courierService: CourierServicesService,private route:Router) { }
  
   ngOnInit() {
     this.courierService.getCourierDetails().subscribe(data => {
@@ -19,5 +20,14 @@ export class ViewCouriersComponent implements OnInit {
       console.error('Error fetching courier details:', error);
     });
  }
-
+ goBack(){
+   this.route.navigate(['/admin']);
+ }
+ deleteCourier(id : number)
+{
+  this.courierService.deleteCourier(id).subscribe((data)=>{
+    console.log("complete");
+  });
+  window.alert("deleted Successfully");
+}
  }

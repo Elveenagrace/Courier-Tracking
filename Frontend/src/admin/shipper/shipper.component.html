@@ -1,0 +1,35 @@
+<div class="table-container " >
+    <table class="shipper-table">
+       <thead>
+         <tr>
+           <th>courierHandlerName</th>
+           <th>contactInfo</th>
+           <th>vehicleName</th>
+           <th>vehicleNumber</th>
+           <th>backgroundCheck</th>
+          
+          
+         </tr>
+       </thead>
+       <tbody>
+         <ng-container *ngFor="let shipper of shipperList">
+           <tr>
+             
+             <td>{{shipper.courierHandlerName}}</td>
+             <td>{{shipper.contactInfo}}</td>
+             <td>{{shipper.vehicleName}}</td>
+             <td>{{shipper.vehicleNumber}}</td>
+             <td>{{shipper.backgroundCheck}}</td>
+             <!-- <td><button (click)="deleteUser(user.userId)">delete</button></td> -->
+            
+            
+           </tr>
+         </ng-container>
+       </tbody>
+    </table>
+    <br>
+    <br>
+    <button class="button-56" (click)="goBack()">back</button>
+   </div>
+   
+

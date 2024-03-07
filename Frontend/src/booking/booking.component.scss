@@ -12,6 +12,8 @@
   border: 2px solid #ccc; 
   padding: 80px;
   border-radius: 10px;
+  margin-top: 51px;
+  background-color: #EAE7FA;
   }
   
   .division {
@@ -23,6 +25,7 @@
     border: 2px solid #999;
     margin: 0 20px;
     border-radius: 8px;
+    
   }
   
   
@@ -90,31 +93,27 @@
   }
   .navbar {
     display: flex;
-   
-    justify-content: flex-end;
+    justify-content: space-between; 
     align-items: center;
     background-color: #573b8a;
     padding: 10px;
-  }
-  
-  .navbar-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   }
+   
+   .navbar-title {
     color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: whitesmoke;
+    margin-right: 20px; 
+    flex: 1; 
+    text-align: center;
+    font-size: x-large;
+    
+   }
+   
+   
+   .dropdown-icon {
     cursor: pointer;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
+   }
+   
+   .dropdown-content {
     display: none;
     position: absolute;
     top: 40px;
@@ -124,12 +123,18 @@
     border-radius: 4px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-   .dropdown-content {
-    display: block;
-  }
- 
+   }
+   
+   .dropdown-content.show {
+    display: flex;
+
+    flex-direction: column;
+    
+   }
+   
+ h1{
+  text-align: center;
+ }
  
   .material-symbols-outlined {
     color: snow;
@@ -139,6 +144,16 @@
     'GRAD' 0,
     'opsz' 24
   }
+
+.material-symbols-outlined {
+  color:573b8a;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
   
  
   

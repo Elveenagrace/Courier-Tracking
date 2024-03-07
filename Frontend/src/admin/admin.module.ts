@@ -5,13 +5,17 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { CourierAnalysisComponent } from './view-analysis/courier-analysis/courier-analysis.component';
 import { ViewCouriersComponent } from './couriers/view-couriers/view-couriers.component';
+import { UsersComponent } from './users/users/users.component';
+import { ShipperComponent } from './shipper/shipper.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     CourierAnalysisComponent,
-    ViewCouriersComponent
+    ViewCouriersComponent,
+    UsersComponent,
+    ShipperComponent
   ],
   imports: [
     CommonModule,

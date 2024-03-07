@@ -1,20 +1,20 @@
-<nav class="navbar" >
+<nav class="navbar">
+  <span class="navbar-title"><b>Swift Ship</b></span>
   <div class="dropdown">
-    <div class="">
-      <span class="material-symbols-outlined">
-        person
+     <div class="dropdown-icon" (click)="toggleDropdown()">
+      
+       <span></span>
+       <span class="material-symbols-outlined" routerLink="/login">
+        logout
         </span>
-    </div>
-    <div class="dropdown-content">
-      <button  type = "button" routerLink="/user/userInfo">My Info</button>
-    
-    <button  type = "button" routerLink="/login">Logout</button>
-    
-    </div>
+     </div>
+     <div class="dropdown-content">
+       
+     </div>
   </div>
-</nav>
+ </nav>
 <br>
- 
+ <h1>WELCOME TO ADMIN PORTAL</h1>
  <div class="division-container">
   <div class="division">
      <h2 class="division-heading">View metrics</h2>
@@ -25,5 +25,14 @@
      <h2 class="division-heading">View all Couriers</h2>
      <button class="button-56" routerLink="view-couriers" (click)="allCouriers()">CLICK HERE!</button>
   </div>
+
+  <div class="division">
+    <h2 class="division-heading">View all Users</h2>
+    <button class="button-56" routerLink="all-users" (click)="allUsers()">CLICK HERE!</button>
+ </div>
+ <div class="division">
+  <h2 class="division-heading">View all Shippers</h2>
+  <button class="button-56" routerLink="all-shippers" (click)="allUsers()">CLICK HERE!</button>
+</div>
  </div>
  

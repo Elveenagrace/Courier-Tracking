@@ -7,13 +7,16 @@ import { FormControl, FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class UserServicesService {
+  deleteUser(id: number) {
+    const delurl = `https://localhost:7081/api/user/delete/${id}`;
+    return this.http.delete<any>(delurl);
+  }
   
 
   constructor(private http:HttpClient) { }
   private apiUrl = 'https://localhost:7081/users/editInfo';
   updateUser(userId: number, userDetails: any): Observable<any> {
 
-    // Assuming userId is part of the URL path
     return this.http.put(`https://localhost:7081/api/user/${userId}`, userDetails);
  }
   getuserDetails(id :number)  : Observable<any>{
@@ -45,4 +48,9 @@ export class UserServicesService {
     const signupurl = 'https://localhost:7081/users/signup';
     return this.http.post<any>(signupurl, formData);
   }
+  getAllUserDetails(): Observable<any> {
+    const apiUrl='https://localhost:7081/api/user/Details';
+
+    return this.http.get<any>(apiUrl);
+ }
 }

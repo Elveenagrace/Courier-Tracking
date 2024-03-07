@@ -5,15 +5,16 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px; 
+    background-color: #EAE7FA;
    
-  border: 2px solid #ccc; /* Add border to the main container */
-  border-radius: 10px;/* Add padding around the container */
+  border: 2px solid #ccc; 
+  border-radius: 10px;
   }
   
   .form-container {
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
     padding: 20px;
   }
   
@@ -21,30 +22,14 @@
     margin-bottom: 20px;
   }
   
-  /* Rounded corners for inputs */
+  
   .form-group input[type="text"] {
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 10px;
   }
   
-  /* Button styles */
-//   .btn {
-//     border-radius: 5px;
-//     padding: 10px 20px;
-//     margin-right: 10px;
-//   }
   
-//   .btn-success {
-//     background-color: #28a745;
-//     color: #fff;
-//   }
-  
-//   .btn-light {
-//     background-color: #f8f9fa;
-//     color: #333;
-//   }
-
 
 .button-56 {
     align-items: center;

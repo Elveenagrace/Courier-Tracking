@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-payments',
@@ -16,7 +17,7 @@ export class PaymentsComponent implements OnInit{
  
   fakeamount : number
   amount: any;
-  constructor(private router: Router, private manage: CourierServicesService, private routing:ActivatedRoute) {}
+  constructor(private router: Router, private manage: CourierServicesService, private routing:ActivatedRoute, public snackBar: MatSnackBar ) {}
   ngOnInit(): void {
     this.routing.queryParams.subscribe(params=>{
       if (params['amount']) {
@@ -61,11 +62,15 @@ export class PaymentsComponent implements OnInit{
               console.log(details);
               if(details.status=="COMPLETED"){
                 this.paymnent.transactionID=details.id;
+                this.snackBar.open('Payment successful', 'dismiss', { duration: 3000 });
+
                 this.router.navigate(['/Booking/confirmation']);
               }
             });
           },
           onError:(error:any)=>{
+            this.snackBar.open('Payment error', 'dismiss', { duration: 3000 });
+
             console.log(error);
           }
         }
@@ -77,6 +82,8 @@ export class PaymentsComponent implements OnInit{
     }
     
     cancel(){
+      this.snackBar.open('Payment cancelled', 'dismiss', { duration: 3000 });
+
       this.router.navigate(['/Booking/CourierBooking']);
     }
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-courier-details',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CourierDetailsComponent implements OnInit {
   formBuilder: any;
-  constructor(private cs: CourierServicesService, private fb:FormBuilder,private router: Router) {}
+  constructor(private cs: CourierServicesService, private fb:FormBuilder,private router: Router,public snackBar: MatSnackBar) {}
   detailsForms: FormGroup;
   ngOnInit(): void {
 
@@ -54,6 +55,8 @@ export class CourierDetailsComponent implements OnInit {
     });
   }
   onCancel(){
+    this.snackBar.open('Tracking cancelled', 'dismiss', { duration: 3000 });
+
     this.router.navigate(['/Booking']);
 
   }

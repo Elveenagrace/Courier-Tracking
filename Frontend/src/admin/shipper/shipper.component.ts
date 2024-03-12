@@ -1,4 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 
@@ -9,12 +10,12 @@ import { CourierServicesService } from 'src/shared/services/courierServices/cour
 })
 export class ShipperComponent implements OnInit{
   shipperList: any[] = [];
-  constructor(private courierService: CourierServicesService,private route:Router){}
+  constructor(private courierService: CourierServicesService,private route:Router,public snackBar: MatSnackBar){}
   ngOnInit(): void {
     this.courierService.getAllShipperDetails().subscribe(data => {
       this.shipperList = data;
     }, error => {
-      console.error('Error fetching courier details:', error);
+      this.snackBar.open('Error fetching shipper details.Please try Again Later.', 'dismiss', { duration: 3000 });
     });
   }
 

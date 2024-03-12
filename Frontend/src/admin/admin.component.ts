@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  constructor(private route:Router){}
+  constructor(private route:Router,public snackBar:MatSnackBar){}
   courierAnalysis(){
 
   }
@@ -23,4 +24,12 @@ export class AdminComponent {
     dropdownContent.classList.toggle('show');
  }
 
+ logout(){
+  //console.log("out");
+  
+  sessionStorage.clear();
+  this.snackBar.open('logged out successfully', 'dismiss', { duration: 3000 });
+  
+  sessionStorage.clear();
+}
 }

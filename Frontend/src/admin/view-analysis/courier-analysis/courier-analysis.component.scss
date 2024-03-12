@@ -6,7 +6,10 @@
     height: 100vh; 
     
    }
-   
+   .big{
+    display: flex;
+    flex-direction: column;
+   }
    .chart-container {
     display: flex;
     justify-content: center;

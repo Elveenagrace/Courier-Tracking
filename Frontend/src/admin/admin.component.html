@@ -4,7 +4,7 @@
      <div class="dropdown-icon" (click)="toggleDropdown()">
       
        <span></span>
-       <span class="material-symbols-outlined" routerLink="/login">
+       <span class="material-symbols-outlined" routerLink="/login" (click)="logout()">
         logout
         </span>
      </div>
@@ -17,21 +17,21 @@
  <h1>WELCOME TO ADMIN PORTAL</h1>
  <div class="division-container">
   <div class="division">
-     <h2 class="division-heading">View metrics</h2>
+     <h2 class="division-heading">Metrics</h2>
      <button class="button-56" routerLink="courier-analysis" (click)="courierAnalysis()">CLICK HERE!</button>
   </div>
    
   <div class="division">
-     <h2 class="division-heading">View all Couriers</h2>
+     <h2 class="division-heading">Couriers</h2>
      <button class="button-56" routerLink="view-couriers" (click)="allCouriers()">CLICK HERE!</button>
   </div>
 
   <div class="division">
-    <h2 class="division-heading">View all Users</h2>
+    <h2 class="division-heading">Users</h2>
     <button class="button-56" routerLink="all-users" (click)="allUsers()">CLICK HERE!</button>
  </div>
  <div class="division">
-  <h2 class="division-heading">View all Shippers</h2>
+  <h2 class="division-heading">Shippers</h2>
   <button class="button-56" routerLink="all-shippers" (click)="allUsers()">CLICK HERE!</button>
 </div>
  </div>

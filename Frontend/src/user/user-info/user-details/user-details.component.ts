@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServicesService } from 'src/shared/services/userServices/user-services.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 
 @Component({
@@ -13,7 +15,7 @@ export class UserDetailsComponent implements OnInit {
  
  
   ngOnInit(): void {
-    const id = localStorage.getItem('userId');
+    const id = sessionStorage.getItem('userId');
     const userId = parseInt(id, 10);
     console.log(id);
    
@@ -46,27 +48,31 @@ export class UserDetailsComponent implements OnInit {
     private formBuilder: FormBuilder,
     // private courierService: CourierServicesService,
     private userService:UserServicesService,
-    private router:Router
+    private router:Router,
+    public snackBar: MatSnackBar
     
   ) { }
   
   onUpdate(): void {
     const id = sessionStorage.getItem('userId');
+    console.log(id);
     const userId = parseInt(id, 10);
     this.userService.updateUser(userId, this.UserForm.value).subscribe(
       response => {
-        console.log('User updated successfully', response);
-        alert('updated successfully');
+        this.snackBar.open('User updated successfully', 'OK', { duration: 3000 });
+
         this.router.navigate(['/Booking']);
       },
       error => {
-        console.error('Error updating user', error);
+        this.snackBar.open('Error updating user', 'OK', { duration: 3000 });
       }
     );
     
  }
 
 onCancel(): void {
+  this.snackBar.open('updation cancelled', 'dismiss', { duration: 3000 });
+
   this.router.navigate(['/Booking']);
 }
 

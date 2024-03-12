@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {  Router } from '@angular/router';
 import { UserServicesService } from 'src/shared/services/userServices/user-services.service';
 
@@ -22,6 +23,7 @@ export class LoginPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService:UserServicesService,
     private router: Router,
+    public snackBar: MatSnackBar
     
    
     
@@ -57,21 +59,29 @@ export class LoginPageComponent implements OnInit {
       this.userService.loginUser(formData).subscribe({
         next: (data) => {
           if (data.message === 'user') {
-            localStorage.setItem('userId', data.userId); 
+            sessionStorage.setItem('userId', data.userId); 
             console.log(data);
 
             this.router.navigate(['/Booking']);
+            this.snackBar.open('Login successful.', 'dismiss', { duration: 3000 });
+
 
           } else if (data.message === 'admin') {
             this.router.navigate(['/admin']);
+            this.snackBar.open('Login successful.', 'dismiss', { duration: 3000 });
+
           } else {
-            alert("Sign up, please!");
+            //alert("Sign up, please!");
+            this.snackBar.open('Sign up, please!', 'OK', { duration: 3000 });
+
 
           }
         },
         error: (error) => {
           console.error('Login Error:', error);
           alert("Login failed. Please try again.");
+          this.snackBar.open('Login failed. Please try again.', 'dismiss', { duration: 3000 });
+
 
         }
 
@@ -93,11 +103,12 @@ export class LoginPageComponent implements OnInit {
   handleResponse(response: any): void {
     if (response.status === 200) {
      
-       
+      this.snackBar.open('Signed up Successfully.', 'dismiss', { duration: 3000 });
+
        this.router.navigate(['Booking']); 
     } else {
       
-       this.errorMessage = 'Login successful. Redirecting...';
+       this.errorMessage = 'Login successful.';
        setTimeout(() => {
          this.router.navigate(['/booking-module']);
        }, 2000);
@@ -114,5 +125,6 @@ export class LoginPageComponent implements OnInit {
        }
        
     }
-   }
+  }
+   
 }

@@ -9,6 +9,7 @@ import { CourierDetailsComponent } from './courier-details/courier-details.compo
 import { PaymentsComponent } from './payments/payments.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { LocationComponent } from './live-tracking/location/location.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     PaymentsComponent,
     ConfirmationPageComponent,
     CheckoutComponent,
+    LocationComponent,
    
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class CheckoutComponent {
   
   currentPrice: number | null = null;
 
-constructor(private courierService : CourierServicesService,private router: Router){
+constructor(private courierService : CourierServicesService,private router: Router, public snackBar: MatSnackBar){
 
 }
   fetchCourierPrice(courierId: number): void {
@@ -32,12 +33,16 @@ constructor(private courierService : CourierServicesService,private router: Rout
   onPay():void{
     if(this.currentPrice !== null){
     this.router.navigate(['/Booking/Payments'],{queryParams:{ amount:this.currentPrice}});
+    this.snackBar.open('Navigating to payment page', 'dismiss', { duration: 3000 });
+
     }else{
-      console.error('Cannot navigate to payment page with booking a courier');
+      this.snackBar.open('Cannot navigate to payment page without booking a courier', 'dismiss', { duration: 3000 });
     }
 
   }
   onCancel(){
+    this.snackBar.open('Checkout cancelled', 'dismiss', { duration: 3000 });
+
     this.router.navigate(['/Booking/CourierBooking']);
   }
 }

@@ -23,6 +23,8 @@
    }
    .button-56 {
     align-items: center;
+    justify-self: center;
+     
     background-color: #573b8a;
     border: 2px solid #111;
     border-radius: 8px;
@@ -73,9 +75,14 @@
     outline: 0;
   }
   
+
+
+  
   @media (min-width: 768px) {
     .button-56 {
       padding: 0 40px;
+      display: flex;
+     
     }
   }
   .material-symbols-outlined {

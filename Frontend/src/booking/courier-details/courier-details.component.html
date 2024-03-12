@@ -1,22 +1,24 @@
+<div class="fomcontianer">
 
-<form [formGroup]="detailsForms" class="detailsForms mb-3 gap-2 br-30 p-4" (ngSubmit)="onSubmit(detailsForms.value)">
-    <div class="form-group mb-3 br-30 " >
-      
-      <input type="text"  class="Form-control" placeholder="Enter Courier ID" formControlName="id">
-      <br>
-      <br>
-      <button class="button-56"  >Submit</button>
-      <br>
-      <button class=" button-56" (click)="onCancel()" >Cancel</button>
-      
-
+  <form [formGroup]="detailsForms" class="detailsForms mb-3 gap-2 br-30 p-4" (ngSubmit)="onSubmit(detailsForms.value)">
+      <div class="form-group mb-3 br-30 " >
+        
+        <input type="text"  class="Form-control" placeholder="Enter Courier ID" formControlName="id">
+        <br>
+        <br>
+        <button class="button-56"  >Submit</button>
+        <br>
+        <button class=" button-56" (click)="onCancel()" >Cancel</button>
+        
+  
+       
      
-   
-    </div>
-</form>
+      </div>
+  </form>
+</div>
 <br>
 
-<div >
+<div *ngIf="myCouriers.length >0">
     <table class="table-container">
        <thead class="courier-table">
          <tr>

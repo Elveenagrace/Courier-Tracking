@@ -36,7 +36,21 @@
     transition: transform .2s ease-out;
     z-index: -1;
   }
-  
+  .fomcontianer{
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    border: 1px blueviolet solid;
+    padding: 20px;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: rgb(87, 59, 138,0.5);
+    margin-left: 520px;
+  }
   .button-56:hover:after {
     transform: translate(0, 0);
   }

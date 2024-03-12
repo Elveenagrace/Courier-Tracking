@@ -1,5 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Inject,OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ConfirmpopopComponent } from 'src/admin/confirmpopop/confirmpopop.component';
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
 
 
@@ -11,7 +14,7 @@ import { CourierServicesService } from 'src/shared/services/courierServices/cour
 export class ViewCouriersComponent implements OnInit {
   courierList: any[] = [];
  
-  constructor(private courierService: CourierServicesService,private route:Router) { }
+  constructor(public dialog: MatDialog,private courierService: CourierServicesService,private route:Router, public snackBar: MatSnackBar) { }
  
   ngOnInit() {
     this.courierService.getCourierDetails().subscribe(data => {
@@ -23,11 +26,16 @@ export class ViewCouriersComponent implements OnInit {
  goBack(){
    this.route.navigate(['/admin']);
  }
- deleteCourier(id : number)
-{
-  this.courierService.deleteCourier(id).subscribe((data)=>{
-    console.log("complete");
-  });
-  window.alert("deleted Successfully");
-}
+ deleteCourier(userid: number) {
+   
+  this.dialog
+  .open(ConfirmpopopComponent,{
+    data: {
+     id:userid,
+     val:false
+   }
+  })
+  .afterClosed()
+ }
+ 
  }

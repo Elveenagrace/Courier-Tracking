@@ -7,15 +7,17 @@ import { CourierAnalysisComponent } from './view-analysis/courier-analysis/couri
 import { ViewCouriersComponent } from './couriers/view-couriers/view-couriers.component';
 import { UsersComponent } from './users/users/users.component';
 import { ShipperComponent } from './shipper/shipper.component';
+import { ConfirmpopopComponent } from './confirmpopop/confirmpopop.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent,
+    AdminComponent, 
     CourierAnalysisComponent,
     ViewCouriersComponent,
     UsersComponent,
-    ShipperComponent
+    ShipperComponent,
+    ConfirmpopopComponent
   ],
   imports: [
     CommonModule,

@@ -1,10 +1,10 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PaymentsComponent } from '../payments/payments.component';
 
 
 import { CourierServicesService } from 'src/shared/services/courierServices/courier-services.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -19,7 +19,8 @@ export class CourierBookingComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private courierService: CourierServicesService,
-    private router: Router 
+    private router: Router ,
+    public snackBar: MatSnackBar 
   ) { }
 
   ngOnInit(): void {
@@ -43,18 +44,25 @@ export class CourierBookingComponent implements OnInit {
       this.courierService.Addcourier(formData).subscribe({
         next: (response) => {
           console.log('Form data sent successfully', response);
+         
+          
+          this.snackBar.open('Submitted successfully', 'dismiss', { duration: 3000 });
+
            
         },
         error: (error) => {
           console.error('Error occurred while sending form data', error);
+          
         }
       });
-     
-
+      
       this.router.navigate(['/Booking/checkout']);
+      
     }
   }
   onCancel() {
+    this.snackBar.open('Booking cancelled', 'dismiss', { duration: 3000 });
+
     this.router.navigate(['/Booking']);
 
   }
